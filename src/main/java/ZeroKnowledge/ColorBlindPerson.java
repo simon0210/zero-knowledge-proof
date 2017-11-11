@@ -1,8 +1,10 @@
 package ZeroKnowledge;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public final class ColorBlindPerson implements IPerson {
     private final Random random = new Random();
@@ -13,9 +15,10 @@ public final class ColorBlindPerson implements IPerson {
      * @param balls
      * @return Ball A randomly selected ball.
      */
-    public Ball pickBall(final List<Ball> balls) {
+    public Ball pickBall(final Set<Ball> balls) {
         lastSeenBall = currentBall;
-        currentBall = balls.get(random.nextInt(balls.size()));
+        List<Ball> ballList = new ArrayList(balls);
+        currentBall = ballList.get(random.nextInt(ballList.size()));
         return currentBall;
     }
     

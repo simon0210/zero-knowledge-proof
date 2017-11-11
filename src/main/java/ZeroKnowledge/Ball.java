@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Ball {
+public class Ball implements Comparable {
     private final Color color;
     private final UUID id;
     
@@ -36,5 +36,11 @@ public class Ball {
         int hash = 5;
         hash = 29 * hash + Objects.hashCode(this.id);
         return hash;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        final Ball otherBall = (Ball) o;
+        return getColor().getRGB() - otherBall.getColor().getRGB();
     }
 }

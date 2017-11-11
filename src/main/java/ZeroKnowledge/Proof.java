@@ -1,11 +1,11 @@
 package ZeroKnowledge;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Proof {
-    private static final List<Ball> BALLS = new ArrayList();
+    private static final Set<Ball> BALLS = new TreeSet<>();
     private static final int ITERATIONS = 100;
     private static double prob = 1.0;
     
