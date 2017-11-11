@@ -13,14 +13,14 @@ public final class ColorBlindPerson implements IPerson {
      * @param balls
      * @return Ball A randomly selected ball.
      */
-    public final Ball pickBall(final List<Ball> balls) {
+    public Ball pickBall(final List<Ball> balls) {
         lastSeenBall = currentBall;
         currentBall = balls.get(random.nextInt(balls.size()));
         return currentBall;
     }
     
     @Override
-    public final Color getBallColor(final Ball ball) {
+    public Color getBallColor(final Ball ball) {
         return Color.GRAY;
     }
 
