@@ -40,6 +40,10 @@ public final class Ball implements Comparable {
             return false;
         }
 
+        if (! (o instanceof Ball)) {
+            return false;
+        }
+
         Ball otherBall = (Ball) o;
 
         return this.id == otherBall.id;
